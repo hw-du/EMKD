@@ -274,6 +274,7 @@ class BERTTrainer(AbstractTrainer):
             h = attr_logits_k.size(-1)
             attr_logits_k = (attr_logits_k[active_index]).view(-1,h)
             attr_labels = (self.args.attribute_one_hot_label_matrix[attr_tokens]).to(self.args.device)
+            #attr_labels = (self.args.attribute_one_hot_label_matrix[attr_tokens.cpu()]).to(self.args.device)#use this line in case the device setting goes wrong
             attr_loss = self.bce(attr_logits_k, (attr_labels[active_index]).view(-1,self.args.num_attributes+1))
             main_loss += attr_loss
             ICL += self.ICL(anchors[n],[pairs[positive_index][n] for positive_index in range(num_positive)])#this model
