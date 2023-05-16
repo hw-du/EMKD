@@ -30,7 +30,6 @@ Please cite our paper if you find our codes useful:
                Fuzhen Zhuang and
                Guanfeng Liu and
                Lei Zhao and
-               Yanchi Liu and
                Victor S. Sheng},
   title     = {Ensemble Modeling with Contrastive Knowledge Distillation for Sequential Recommendation},
   booktitle = {SIGIR},
